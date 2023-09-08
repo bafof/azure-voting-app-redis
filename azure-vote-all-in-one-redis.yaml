@@ -57,7 +57,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: azure-vote-front
-        image: BariACR.azurecr.io/azuredocs/azure-vote-front:d01beca6efc9a2b72937c1d4bf8494f572c7c05b  # azure-vote-front:${{ github.sha }}  mcr.microsoft.com/azuredocs/azure-vote-front:v1
+        image: BariACR.azurecr.io/azuredocs/azure-vote-front:${{ github.sha }}  # azure-vote-front:${{ github.sha }}  mcr.microsoft.com/azuredocs/azure-vote-front:v1
         ports:
         - containerPort: 80
         resources:
