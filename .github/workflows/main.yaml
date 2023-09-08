@@ -43,5 +43,5 @@ jobs:
           namespace: 'default'
           manifests: |
              azure-vote-all-in-one-redis.yaml
-          images: BariACR.azurecr.io/azuredocs/azure-vote-front:${{ github.sha }} # ${{ secrets.repository }}/azure-vote-front:${{ github.sha }}  'mcr.microsoft.com/azuredocs/azure-vote-front:v1'
+          images: bariacr.azurecr.io/azuredocs/azure-vote-front:${{ github.sha }} # ${{ secrets.repository }}/azure-vote-front:${{ github.sha }}  'mcr.microsoft.com/azuredocs/azure-vote-front:v1'
           pull-images: false
