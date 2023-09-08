@@ -9,19 +9,19 @@ jobs:
     steps:
       - name: Checkout source code 
         uses: actions/checkout@v3 
-      - name: ACR build
-        id: build-push-acr
-        uses: azure/acr-build@v1
-        with:
-          service_principal: ${{ secrets.service_principal }}
-          service_principal_password: ${{ secrets.service_principal_password }}
-          tenant: ${{ secrets.tenant }}
-          registry: ${{ secrets.registry }}
-          repository: ${{ secrets.repository }}
-          image:  azure-vote-front
-          folder: azure-vote
-          branch: master
-          tag: ${{ github.sha }}
+ #     - name: ACR build
+ #       id: build-push-acr
+ #       uses: azure/acr-build@v1
+ #       with:
+ #         service_principal: ${{ secrets.service_principal }}
+ #         service_principal_password: ${{ secrets.service_principal_password }}
+ #         tenant: ${{ secrets.tenant }}
+ #        registry: ${{ secrets.registry }}
+ #         repository: ${{ secrets.repository }}
+ #         image:  azure-vote-front
+ #         folder: azure-vote
+ #         branch: master
+ #         tag: ${{ github.sha }}
       - name: Azure login
         id: login
         uses: azure/login@v1.4.3
@@ -43,5 +43,5 @@ jobs:
           namespace: 'default'
           manifests: |
              azure-vote-all-in-one-redis.yaml
-          images: BariACR.azurecr.io/azuredocs/azure-vote-front:c4e41109beb20096f0560665b26573cbda57f36f # ${{ secrets.repository }}/azure-vote-front:${{ github.sha }}  'mcr.microsoft.com/azuredocs/azure-vote-front:v1'
+          #images: BariACR.azurecr.io/azuredocs/azure-vote-front:c4e41109beb20096f0560665b26573cbda57f36f # ${{ secrets.repository }}/azure-vote-front:${{ github.sha }}  'mcr.microsoft.com/azuredocs/azure-vote-front:v1'
           pull-images: false
